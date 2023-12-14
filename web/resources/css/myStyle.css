@@ -1,0 +1,83 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #faf0cd, #fab397);
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+input[type=number] {
+    width: 30%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;}
+
+input[type=text],[type=password] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;}
+
+input[type=number]:focus {
+    background-color: #ddd;
+}
+
+input[type=text]:focus {
+    background-color: #ddd;
+}
+
+input[type=password]:focus {
+    background-color: #ddd;
+}
+
+
+input[type=submit]{
+    background-color: #FF6347;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.b{
+    background-color: #FF6347;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.e{  font-size: 20px;
+     color: red;
+}
+table {
+
+    width: 100%;
+    border: none;
+    margin-bottom: 20px;
+}
+
+th {
+    padding: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    border-top: 2px solid #716561;
+    border-bottom: 2px solid #716561;
+    background: #FF6347;
+    color: white;
+
+}
+td {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    border-top: 1px solid #716561;
+}
