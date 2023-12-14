@@ -12,7 +12,8 @@ public class Admin {
     private int id;
         private String login, password;
 
-    public Admin(String login, String password) {
+    public Admin(int id,String login, String password) {
+        this.id = id;
         this.login = login;
         this.password = password;
     }

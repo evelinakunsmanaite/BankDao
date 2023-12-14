@@ -12,11 +12,11 @@ import java.util.Set;
  * @author Administrator
  */
 public interface CustomerDao {
-    boolean create(Customer сustomer);
+    int create(Customer сustomer);
 
     Set<Customer> read();
 
-    boolean update();
+    int update(Customer сustomer);
 
-    boolean delete(int id);
+    int delete(Customer сustomer);
 }

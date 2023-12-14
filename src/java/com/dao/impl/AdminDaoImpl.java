@@ -4,8 +4,9 @@
  */
 package com.dao.impl;
 
-import com.dao.CustomerDao;
+import com.dao.AdminDao;
 import com.dao.UserDao;
+import com.model.Admin;
 import com.model.User;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -19,34 +20,33 @@ import javax.sql.DataSource;
  *
  * @author Administrator
  */
-public class UserDaoImpl  implements UserDao{
+public class AdminDaoImpl implements AdminDao{
     private final DataSource dataSource;
 
-    public UserDaoImpl(DataSource dataSource) {
+    public AdminDaoImpl(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
     @Override
-    public Set<User> read() {
-String req = "Select * from users";
-        Set<User> users;
+    public Set<Admin> read() {
+String req = "Select * from admin";
+        Set<Admin> admin;
         try (Connection conn = dataSource.getConnection()) {
             try (Statement statement = conn.createStatement(); ResultSet resultSet = statement.executeQuery(req)) {
-                users = new HashSet<>();
+                admin = new HashSet<>();
                 while (resultSet.next()) {//пока есть записи 
                     int id = resultSet.getInt("id");
                     String login = resultSet.getString("login");
-                    String name = resultSet.getString("name");
                     String password = resultSet.getString("password");
              
-                    users.add(new User(id, login, name, password));
+                    admin.add(new Admin(id, login, password));
                 }
             }
-            return users;
+            return admin;
         } catch (SQLException ex) {
             ex.printStackTrace();
             return null;
-        }   
-    }
+        }    }
 
+   
 }

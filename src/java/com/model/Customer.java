@@ -70,11 +70,11 @@ public class Customer {
         this.creditCardNumber = creditCardNumber;
     }
 
-    public long getbankAccountNumber() {
+    public long getBankAccountNumber() {
         return bankAccountNumber;
     }
 
-    public void setbankAccountNumber(long interbankAccountNumber) {
+    public void setBankAccountNumber(long interbankAccountNumber) {
         this.bankAccountNumber = bankAccountNumber;
     }
 
