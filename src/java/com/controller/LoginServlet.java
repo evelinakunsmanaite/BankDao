@@ -26,7 +26,7 @@ public class LoginServlet extends InitServlet implements Jumpable {
             throws ServletException, IOException {
         String login = request.getParameter("login");
         String pass = request.getParameter("pass");
-        
+
         ValidationError errors = new ValidationError();
         Validator.validate(login, pass, errors);
         RequestDispatcher rd;
@@ -37,11 +37,9 @@ public class LoginServlet extends InitServlet implements Jumpable {
             return;
         }
 
-        
         User user = userService.login(login, pass);
         Admin admin = adminService.login(login, pass);
 
-        
         if (user != null) {
             request.getSession().setAttribute("name", user.getName());
             jump("/WEB-INF/jsp/cabinet.jsp", request, response);
@@ -50,13 +48,11 @@ public class LoginServlet extends InitServlet implements Jumpable {
             jump("/WEB-INF/jsp/adminF.jsp", request, response);
 
         } else {
-             Locale userLocale = request.getLocale();
+            Locale userLocale = request.getLocale();
 
-        // Load the appropriate ResourceBundle based on the user's locale
-        ResourceBundle bundle = ResourceBundle.getBundle("com.localization.messages.msg", userLocale);
+            ResourceBundle bundle = ResourceBundle.getBundle("com.localization.messages.msg", userLocale);
 
-        // Use the ResourceBundle to get the localized messages
-        String failureMessage = bundle.getString("error.log");
+            String failureMessage = bundle.getString("error.log");
 
             request.setAttribute("error", failureMessage);
             jump("/WEB-INF/jsp/error.jsp", request, response);

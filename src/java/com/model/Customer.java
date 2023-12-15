@@ -21,7 +21,16 @@ public class Customer {
         this.bankAccountNumber = bankAccountNumber;
         this.cardbalance = cardbalance;
     }
-
+    public Customer( String lastName, String firstName, String middleName, String address, long creditCardNumber, long bankAccountNumber, int cardbalance) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.address = address;
+        this.creditCardNumber = creditCardNumber;
+        this.bankAccountNumber = bankAccountNumber;
+        this.cardbalance = cardbalance;
+    }
+  
     public Customer(int id) {
         this.id = id;
     }
