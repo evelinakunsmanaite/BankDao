@@ -4,33 +4,32 @@
  */
 package com.service.impl;
 
-import com.dao.UserDao;
-import com.model.User;
-import com.service.UserService;
+import com.dao.AdminDao;
+import com.model.Admin;
+import com.service.AdminService;
 import java.util.Set;
 
 /**
  *
  * @author Administrator
  */
-public class UserServiceImpl implements UserService{
-    UserDao dao;
+public class AdminServiceImpl  implements AdminService {
+    AdminDao dao;
 
-    public UserServiceImpl(UserDao dao) {
+    public AdminServiceImpl(AdminDao dao) {
         this.dao = dao;
     }
 
     @Override
-    public Set<User> read() {
+    public Set<Admin> read() {
         return dao.read();
     }
 
-  public User login(String login, String password) {
+  public Admin login(String login, String password) {
         return dao.read().stream()
-                .filter(user -> login.equals(user.getLogin())
-                && password.equals(user.getPassword()))
+                .filter(admin -> login.equals(admin.getLogin())
+                && password.equals(admin.getPassword()))
                 .findFirst()
                 .orElse(null);
     }
-    
 }

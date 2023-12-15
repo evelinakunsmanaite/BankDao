@@ -15,7 +15,7 @@
     <body>
         <h1 align="center">Выполните вход в учетную запись</h1>
         <p align="center">Пожалуйста, заполните форму, чтобы войти в учётную запись</p>
-        <form action="WelcomeServlet" method="post" align="center">
+        <form action="LoginServlet" method="post" align="center">
             <label>логин&nbsp;&nbsp;</label>
             <input type="text" name="login"/><br/>
             <label>пароль</label>

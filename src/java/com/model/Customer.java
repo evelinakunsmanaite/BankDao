@@ -22,6 +22,10 @@ public class Customer {
         this.cardbalance = cardbalance;
     }
 
+    public Customer(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

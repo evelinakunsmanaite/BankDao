@@ -4,17 +4,17 @@
  */
 package com.service;
 
-import com.model.User;
+import com.model.Admin;
 import java.util.Set;
 
 /**
  *
  * @author Administrator
  */
-public interface UserService {
-
-    Set<User> read();
-
-    User login(String login, String password);
-
+public interface AdminService {
+    
+        Set<Admin> read();
+        
+        Admin login(String login, String password);
+        
 }
